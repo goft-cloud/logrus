@@ -94,7 +94,7 @@ go test -bench=.*CallerTracing
 
 The organization's name was changed to lower-case--and this will not be changed
 back. If you are getting import conflicts due to case sensitivity, please use
-the lower-case import: `github.com/sirupsen/logrus`.
+the lower-case import: `github.com/goft-cloud/logrus`.
 
 #### Example
 
@@ -104,7 +104,7 @@ The simplest way to use Logrus is simply the package-level exported logger:
 package main
 
 import (
-  log "github.com/sirupsen/logrus"
+  log "github.com/goft-cloud/logrus"
 )
 
 func main() {
@@ -124,7 +124,7 @@ package main
 
 import (
   "os"
-  log "github.com/sirupsen/logrus"
+  log "github.com/goft-cloud/logrus"
 )
 
 func init() {
@@ -175,7 +175,7 @@ package main
 
 import (
   "os"
-  "github.com/sirupsen/logrus"
+  "github.com/goft-cloud/logrus"
 )
 
 // Create a new instance of the logger. You can have any number of instances.
@@ -250,7 +250,7 @@ Logrus comes with [built-in hooks](hooks/). Add those, or your custom hook, in
 
 ```go
 import (
-  log "github.com/sirupsen/logrus"
+  log "github.com/goft-cloud/logrus"
   "gopkg.in/gemnasium/logrus-airbrake-hook.v2" // the package is named "airbrake"
   logrus_syslog "github.com/sirupsen/logrus/hooks/syslog"
   "log/syslog"
@@ -323,7 +323,7 @@ could do:
 
 ```go
 import (
-  log "github.com/sirupsen/logrus"
+  log "github.com/goft-cloud/logrus"
 )
 
 init() {
@@ -355,7 +355,10 @@ The built-in logging formatters are:
   * When colors are enabled, levels are truncated to 4 characters by default. To disable
     truncation set the `DisableLevelTruncation` field to `true`.
   * When outputting to a TTY, it's often helpful to visually scan down a column where all the levels are the same width. Setting the `PadLevelText` field to `true` enables this behavior, by adding padding to the level text.
-  * All options are listed in the [generated docs](https://godoc.org/github.com/sirupsen/logrus#TextFormatter).
+  * All options are listed in the [generated docs](https://godoc.org/github.com/
+  
+  
+  /logrus#TextFormatter).
 * `logrus.JSONFormatter`. Logs fields as JSON.
   * All options are listed in the [generated docs](https://godoc.org/github.com/sirupsen/logrus#JSONFormatter).
 
@@ -443,7 +446,7 @@ Logrus has a built in facility for asserting the presence of log messages. This 
 
 ```go
 import(
-  "github.com/sirupsen/logrus"
+  "github.com/goft-cloud/logrus"
   "github.com/sirupsen/logrus/hooks/test"
   "github.com/stretchr/testify/assert"
   "testing"
