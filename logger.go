@@ -212,6 +212,10 @@ func (logger *Logger) Print(args ...interface{}) {
 	logger.releaseEntry(entry)
 }
 
+func (logger *Logger) Notice(args ...interface{}) {
+	logger.Log(NoticeLevel, args...)
+}
+
 func (logger *Logger) Warn(args ...interface{}) {
 	logger.Log(WarnLevel, args...)
 }

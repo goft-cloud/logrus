@@ -269,6 +269,10 @@ func (entry *Entry) Log(level Level, args ...interface{}) {
 	}
 }
 
+func (entry *Entry) Notice(args ...interface{}) {
+	entry.Log(NoticeLevel, args...)
+}
+
 func (entry *Entry) Trace(args ...interface{}) {
 	entry.Log(TraceLevel, args...)
 }

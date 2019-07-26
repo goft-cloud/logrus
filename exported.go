@@ -109,6 +109,11 @@ func Info(args ...interface{}) {
 	std.Info(args...)
 }
 
+// Notice logs a message at level Warn on the standard logger.
+func Notice(args ...interface{}) {
+	std.Notice(args...)
+}
+
 // Warn logs a message at level Warn on the standard logger.
 func Warn(args ...interface{}) {
 	std.Warn(args...)

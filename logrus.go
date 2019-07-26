@@ -38,6 +38,8 @@ func ParseLevel(lvl string) (Level, error) {
 		return DebugLevel, nil
 	case "trace":
 		return TraceLevel, nil
+	case "notice":
+		return NoticeLevel, nil
 	}
 
 	var l Level
@@ -58,6 +60,8 @@ func (level *Level) UnmarshalText(text []byte) error {
 
 func (level Level) MarshalText() ([]byte, error) {
 	switch level {
+	case NoticeLevel:
+		return []byte("notice"), nil
 	case TraceLevel:
 		return []byte("trace"), nil
 	case DebugLevel:
@@ -86,6 +90,7 @@ var AllLevels = []Level{
 	InfoLevel,
 	DebugLevel,
 	TraceLevel,
+	NoticeLevel,
 }
 
 // These are the different logging levels. You can set the logging level to log
@@ -109,6 +114,8 @@ const (
 	DebugLevel
 	// TraceLevel level. Designates finer-grained informational events than the Debug.
 	TraceLevel
+	// NoticeLevel level. Only one for a request
+	NoticeLevel
 )
 
 // Won't compile if StdLogger can't be realized by a log.Logger
